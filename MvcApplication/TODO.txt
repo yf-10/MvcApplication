@@ -1,0 +1,7 @@
+﻿<PUBLISH>
+
+	dotnet publish -c Release -o ./publish
+
+<TODO>
+
+	
