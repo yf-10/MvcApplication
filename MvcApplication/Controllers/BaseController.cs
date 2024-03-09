@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Diagnostics;
+using System.Reflection.Metadata;
 
 namespace MvcApplication.Controllers
 {
@@ -8,13 +10,15 @@ namespace MvcApplication.Controllers
         private readonly IConfiguration _configuration;
         private readonly Logger _logger;
 
+        protected const string ERR401URL = "html/401.html";
+        protected const string ERR404URL = "html/404.html";
+        protected const string ERR500URL = "html/500.html";
+
         public BaseController(IConfiguration configuration)
         {
             this._configuration = configuration;
-            this._logger = Logger.GetInstance(configuration);
+            this._logger = Logger.GetInstance(this._configuration);
         }
-
-
 
         // ---------------------------------------------------------------------
         // FILTER
@@ -65,6 +69,23 @@ namespace MvcApplication.Controllers
             base.OnActionExecuted(filterContext);
         }
 
+        // ---------------------------------------------------------------------
+        // CHECK
+        // ---------------------------------------------------------------------
+        private bool SessionCheck()
+        {
+            return true;
+        }
+
+        private bool TokenCheck()
+        {
+            return true;
+        }
+
+        private bool RoleCheck()
+        {
+            return true;
+        }
 
 
     }

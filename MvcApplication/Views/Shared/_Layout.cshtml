@@ -9,12 +9,13 @@
     <!--TITLE-->
     <title>@ViewData["Title"] - Dashboard</title>
     <!--FAVICON-->
-    <link rel="icon" href="assets/img/code-solid.svg" type="image/svg+xml">
-    <!--CSS-->
+    <link rel="icon" href="/assets/img/code-solid.svg" type="image/svg+xml">
+    <!--CSS DATATABLES-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" integrity="sha384-Z0TOldrI3jwzppC780UHyPq5zrGErUKUc4h9tCXK4wVmNgRZ1AfuKUm+7Dvw5qoT" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-    <!--FONTAWESOME-->
+    <!--JS FONTAWESOME-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" integrity="sha384-QM3vQ1ro1SUguF26PKxC17ZxibTi/ixpgL9NRL5/RHw1AmA0pfSeGCh6k+uqbyzJ" crossorigin="anonymous"></script>
+    <!--CSS ORIGINAL-->
+    <link rel="stylesheet" href="~/css/styles.css">
 </head>
 <body class="sb-nav-fixed">
     <!--TOP NAV-->
@@ -110,13 +111,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha384-QzN1ywg2QLsf72ZkgRHgjkB/cfI4Dqjg6RJYQUqH6Wm8qp/MvmEYn+2NBsLnhLkr" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" integrity="sha384-AVZcTqzxUF2SmcoWpuCs3VerwWwAB1A7w6ewRpYO60DHIQnsVd3dhqOyXcP6b9sB" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/datatables-simple-demo.js"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
 
     <!--PAGE CONTENT JS-->
     @await RenderSectionAsync("Scripts", required: false)
+
+    <!--JS ORIGINAL-->
+    <script src="~/js/scripts.js"></script>
 
 </body>
 </html>
