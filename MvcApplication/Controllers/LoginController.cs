@@ -1,39 +1,32 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Npgsql;
 
 namespace MvcApplication.Controllers
 {
     [Route("[controller]/[action]")]
-    public class BudgetController : BaseController
+    public class LoginController : BaseController
     {
         private readonly IConfiguration _configuration;
         private readonly Logger _logger;
 
-        public BudgetController(IConfiguration configuration) : base(configuration)
+        public LoginController(IConfiguration configuration) : base(configuration)
         {
             this._configuration = configuration;
             this._logger = Logger.GetInstance(this._configuration);
         }
 
         // ---------------------------------------------------------------------
-        // Graph
+        // Auth
         // ---------------------------------------------------------------------
         [HttpGet]
-        public IActionResult Graph()
+        public IActionResult Auth()
         {
             try
             {
-                const string CONNECTION_STR = "Server=localhost;Port=5432;User ID=postgres;Database=postgres;Password=postgres;Enlist=true";
-                using (NpgsqlConnection con = new NpgsqlConnection(CONNECTION_STR))
-                {
-                    con.Open();
-                    _logger.Info("Connect to database.");
-                }
                 return View();
             }
             catch (Exception ex)
             {
-                const string ERRORCODE = "E-10000001";
+                const string ERRORCODE = "E-90000001";
                 _logger.Error("ERRORCODE: " + ERRORCODE);
                 _logger.Error(ex.Message);
                 _logger.Error(ex.Source ?? "");

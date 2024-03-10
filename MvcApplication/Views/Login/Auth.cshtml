@@ -1,0 +1,36 @@
+﻿@{ ViewData["Title"] = "Sign in"; }
+
+@{ Layout = "/Views/Login/_LayoutLogin.cshtml"; }
+
+<form action="" class="row g-4">
+    <div class="col-12 rounded">
+        <label>Email<span class="text-danger">*</span></label>
+        <div class="input-group">
+            <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+            <input type="text" class="form-control" name="email" placeholder="Enter Email address">
+        </div>
+    </div>
+
+    <div class="col-12 rounded">
+        <label>Password<span class="text-danger">*</span></label>
+        <div class="input-group">
+            <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+            <input type="text" class="form-control" name="password" placeholder="Enter Password">
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+            <label class="form-check-label" for="inlineFormCheck">Remember me</label>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary px-4 float-end mt-4">Sign in</button>
+    </div>
+</form>
+
+<!--
+    This template is provided from -> https://codepen.io/aniketrod/pen/oNGPWXq
+-->

@@ -27,11 +27,12 @@ namespace MvcApplication.Controllers
             }
             catch (Exception ex)
             {
+                //this.ModelState.AddModelError(string.Empty, "指定されたユーザー名またはパスワードが正しくありません。");
                 const string ERRORCODE = "E-00000001";
-                this._logger.Error("ERRORCODE: " + ERRORCODE);
-                this._logger.Error(ex.Message);
-                this._logger.Error(ex.Source ?? "");
-                this._logger.Error(ex.StackTrace ?? "");
+                _logger.Error("ERRORCODE: " + ERRORCODE);
+                _logger.Error(ex.Message);
+                _logger.Error(ex.Source ?? "");
+                _logger.Error(ex.StackTrace ?? "");
                 return RedirectToAction("Error", "Home", new { code = ERRORCODE, msg = ex.Message });
             }
         }
@@ -51,10 +52,10 @@ namespace MvcApplication.Controllers
             catch (Exception ex)
             {
                 const string ERRORCODE = "E-00000002";
-                this._logger.Error("ERRORCODE: " + ERRORCODE);
-                this._logger.Error(ex.Message);
-                this._logger.Error(ex.Source ?? "");
-                this._logger.Error(ex.StackTrace ?? "");
+                _logger.Error("ERRORCODE: " + ERRORCODE);
+                _logger.Error(ex.Message);
+                _logger.Error(ex.Source ?? "");
+                _logger.Error(ex.StackTrace ?? "");
                 return RedirectToAction("Error", "Home", new { code = ERRORCODE, msg = ex.Message });
             }
         }

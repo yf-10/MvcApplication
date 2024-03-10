@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--TITLE-->
+    <title>@ViewData["Title"] - Dashboard</title>
+    <!--FAVICON-->
+    <link rel="icon" href="~/assets/img/code-solid.svg" type="image/svg+xml">
+    <!--CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .login-page {
+            width: 100%;
+            height: 100vh;
+            display: inline-block;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-right i {
+            font-size: 100px;
+        }
+    </style>
+
+    <div class="login-page bg-light">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 offset-lg-1">
+                    <h3 class="mb-3">Dashboard</h3>
+                    <div class="bg-white shadow rounded">
+                        <div class="row">
+                            <div class="col-md-12 pe-0">
+                                <div class="form-left h-100 py-5 px-5">
+                                    <main>
+                                        <!--PAGE CONTENT-->
+                                        @RenderBody()
+                                        <!--/PAGE CONTENT-->
+                                    </main>
+                                </div>
+                            </div>
+@* 
+                            <div class="col-md-5 ps-0 d-none d-md-block">
+                                <div class="form-right h-100 bg-primary text-white text-center pt-5">
+                                    <i class="bi bi-bootstrap"></i>
+                                    <h2 class="fs-1">Welcome Back!!!</h2>
+                                </div>
+                            </div>
+
+ *@                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--PAGE CONTENT JS-->
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
